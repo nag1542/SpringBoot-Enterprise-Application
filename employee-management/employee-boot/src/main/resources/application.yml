@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: employee-management
+  datasource:
+    url: jdbc:mysql://localhost:3306/employee_db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%X{correlationId}] %-5level %logger{36} - %msg%n"
+
+security:
+  jwt:
+    secret: 12345678901234567890123456789012
+    expiration-seconds: 3600
